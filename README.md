@@ -45,17 +45,18 @@ docker run -it --name=xyz <image> sh ; docker container run -it --name=xyz <imag
 ___
 
 ###### DOCKERFILE
-FROM -> Base Image
-COPY . /usr/share/nginx/html -> Copy from current dir files to specified container directory
-RUN -> Executes a command 
-EXPOSE -> exposing the port for the container
-ENTRYPOINT -> the command required to run the app
+- FROM -> Base Image
+- COPY . /usr/share/nginx/html -> Copy from current dir files to specified container directory
+- RUN -> Executes a command 
+- EXPOSE -> exposing the port for the container
+- ENTRYPOINT -> the command required to run the app
 
 ######An example of Dockerfile
-*FROM nodejs:alpine
-WORKDIR cd
-EXPOSE 8080
-ENTRYPOINT ['node','/app.js']*
+*
+- FROM nodejs:alpine
+- WORKDIR cd
+- EXPOSE 8080
+- ENTRYPOINT ['node','/app.js']*
 
 ```
 docker build -t <image-name> .
