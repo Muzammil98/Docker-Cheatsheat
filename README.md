@@ -1,8 +1,10 @@
 # Docker-Cheatsheat
 Some overview and basic commands for working with Docker
 
-`docker version
-docker info ` 
+```
+docker version
+docker info
+```
 ___
 
 ###### DOCKER ARCHITECTURE
@@ -18,13 +20,14 @@ ___
 -a blueprint of the app
 
 Note: An image cannot be deleted if there is a container running from it
-`
+```
 docker image ls ; docker images
-docker image rm <image-name/id>`
+docker image rm <image-name/id>
+```
 ___
 
 ###### CONTAINERS
-`
+```
 docker run -it <user/image> sh  [Ctrl P+Q (to detach)]
 docker container ls ; docker ps
 docker ps -a
@@ -35,7 +38,7 @@ docker container rm <container name/id> [must be stopped first OR ADD --force af
 docker run -d <image>
 docker ps -a | grep -i node [using regEX]
 docker run -it --name=xyz <image> sh ; docker container run -it --name=xyz <image> sh
-`
+```
 
 *-p[thePortYouWillUse:thePortAppReuqires]*
 `docker run -d -p=9000:80`
@@ -54,14 +57,18 @@ WORKDIR cd
 EXPOSE 8080
 ENTRYPOINT ['node','/app.js']*
 
-`docker build -t <image-name> .
+```
+docker build -t <image-name> .
 docker tag nginx user/nginx:testv1
-docker push user/nginx:testv1`
+docker push user/nginx:testv1
+```
 ___
 
 ###### EXTRAS
-`docker history <image>
-docker inspect <image>`
+```
+docker history <image>
+docker inspect <image>
+```
 ___
 
 ###### For BINDING -v [SystemDirectory:ContainerDirectiry]
